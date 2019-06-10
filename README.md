@@ -1,4 +1,4 @@
 # -Rando-Maze-generator
 A randomly generated maze
-#to do :
+# to do :
 create an exit
