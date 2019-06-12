@@ -2,10 +2,11 @@ var canvas = document.querySelector("canvas")
 canvas.width  = 1000;
 canvas.height = 1000;
 var maze=canvas.getContext("2d");
-maze.fillStyle = "grey";
+maze.fillStyle = "white";
 maze.fillRect(0,0,canvas.width,canvas.height);
 maze.strokeStyle="blue";
 
+var door=true;
 
 //The cell prototype
 function cell(i,j){
@@ -44,7 +45,6 @@ function cell(i,j){
         maze.fillRect(i,j,40,40);
     }
 }
-
 // GRID MAKING
     var h = 25;
     var w = 25;
@@ -84,8 +84,11 @@ function cell(i,j){
             console.log("dis is pos => "+pos)
             console.log("dis is next => "+next[0])
             console.log(grid[i+next[0]].visited)
-
-        
+        if( door && (grid[i].i == (h-1)*40 || grid[i].j == (w-1)*40))
+            
+                if(grid[i].i == (h-1)*40){grid[i].walls[1]=false;door=false;}
+                else if (grid[i].j == (w-1)*40){grid[i].walls[2]=false;door=false;}
+                
         if( grid[i+next[0]].visited !== true)        
             switch (next[0]) {
                 case -w:
