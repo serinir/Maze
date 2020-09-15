@@ -1,2 +1,2 @@
 # Maze generator
-A randomly generated maze
+a js script to randomly generate a maze.
