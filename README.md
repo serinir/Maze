@@ -1,2 +1,2 @@
-# -Rando-Maze-generator
+# Maze generator
 A randomly generated maze
